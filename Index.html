@@ -1,0 +1,347 @@
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M-Pesa Pro Calculator KE</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Segoe UI',Arial; background:linear-gradient(135deg,#00a651 0%,#007a3d 100%); margin:0; padding:20px; min-height:100vh}
+.container{max-width:480px; margin:0 auto}
+
+.header{text-align:center; color:white; margin-bottom:25px}
+.header h1{font-size:28px; margin:10px 0}
+.header p{font-size:14px; opacity:0.9}
+.logo{width:70px; height:70px; background:white; border-radius:50%; margin:0 auto; display:flex; align-items:center; justify-content:center; font-size:40px; font-weight:bold; color:#00a651}
+
+.box <script async src ="https://pagead2.
+googlesyndition.com/pagead/Js/adsbygoogle.js
+? client = ca-pub-PLACEHOLDER"
+Crossorigin = "anonymous"></scrip>
+<Ins class = "adsbygoogle"
+Style = "display:block"
+data-ad-client = "ca-pub-PLACEHOLDER"
+data-ad-slot = "1111"
+data-ad-fotmat = "horizontal"
+data-full-with-responsive = "true" ></ins>
+<Script>( adsbygoogle = window.adsbygoogle || [])
+.push({});</script>
+{background:white; border-radius:20px; padding:25px; box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.tabs{display:flex; gap:8px; margin-bottom:20px; background:#f5f5f5; padding:5px; border-radius:12px}
+.tab{flex:1; padding:12px; border:none; background:transparent; border-radius:8px; cursor:pointer; font-weight:bold; color:#666; transition:0.3s}
+.tab.active{background:#00a651; color:white; box-shadow:0 2px 8px rgba(0,166,81,0.3)}
+
+select,input{width:100%; padding:15px; margin:10px 0; border:2px solid #e0e0e0; border-radius:12px; font-size:16px; transition:0.3s}
+select:focus,input:focus{border-color:#00a651; outline:none}
+
+button.calc{width:100%; padding:16px; background:linear-gradient(135deg,#00a651 0%,#008542 100%); color:white; font-weight:bold; border:none; border-radius:12px; font-size:17px; cursor:pointer; box-shadow:0 4px 15px rgba(0,166,81,0.4); transition:0.3s}
+button.calc:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,166,81,0.5)}
+
+#result{margin-top:25px; padding:20px; background:linear-gradient(135deg,#f0f8ff 0%,#e6f4ff 100%); border-radius:15px; display:none; animation:slideDown 0.4s}
+@keyframes slideDown{from{opacity:0; transform:translateY(-10px)} to{opacity:1; transform:translateY(0)}}
+
+.highlight{background:linear-gradient(135deg,#00a651 0%,#008542 100%); color:white; padding:18px; border-radius:12px; font-size:24px; text-align:center; font-weight:bold; margin:15px 0; box-shadow:0 4px 12px rgba(0,166,81,0.3)}
+.fee{background:#fff8e1; padding:12px; border-left:4px solid #ff9800; margin:10px 0; border-radius:5px}
+.free{background:#e8f5e9; padding:12px; border-left:4px solid #00a651; margin:10px 0; border-radius:5px}
+.info{font-size:13px; color:#666; text-align:center; margin-top:15px}
+
+.footer{text-align:center; color:white; margin-top:20px; font-size:12px; opacity:0.8}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="logo">M</div>
+    <h1>M-Pesa Pro Calculator</h1>
+    <p>All Services • All Fees • 2026 Rates</p>
+  </div>
+
+  <div class="box">
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('forward')">Jua Fee</button>
+      <button class="tab" onclick="switchTab('reverse')">Jua Kuweka</button>
+    </div>
+
+    <div id="forwardTab">
+      <select id="service1">
+        <option value="send">📤 Send Money - Tuma Pesa</option>
+        <option value="withdraw">🏧 Withdraw Agent - Toa Cash</option>
+        <option value="till">🏪 Lipa na M-Pesa Till</option>
+        <option value="paybill">📄 Paybill - Stima/NHIF/Shule</option>
+        <option value="airtime">📱 Buy Airtime/Data</option>
+      </select>
+      <input id="amount1" type="number" placeholder="Weka Ksh amount">
+      <button class="calc" onclick="hesabuForward()">💰 Hesabu Fee</button>
+    </div>
+
+    <div id="reverseTab" style="display:none">
+      <select id="service2">
+        <option value="send">📤 Send Money - Apokee ngapi?</option>
+        <option value="withdraw">🏧 Withdraw - Upate cash ngapi?</option>
+        <option value="paybill">📄 Paybill - Walipwe ngapi?</option>
+      </select>
+      <input id="amount2" type="number" placeholder="Weka pesa unayotaka apokee">
+      <button class="calc" onclick="hesabuReverse()">🔄 Hesabu Kuweka</button>
+    </div>
+
+    <div id="result"></div>
+<div I'd = "adspace" style = "margin-top:20px; 
+text-align:center">
+<script async src ="https://pagead2.
+googlesyndition.com/pagead/Js/adsbygoogle.js
+? client = ca-pub-PLACEHOLDER"
+Crossorigin = "anonymous"></scrip>
+<Ins class = "adsbygoogle"
+Style = "display:block"
+data-ad-client = "ca-pub-PLACEHOLDER"
+data-ad-slot = "2222"
+data-ad-fotmat = "rectangle"
+data-full-with-responsive = "true" ></ins>
+<Script>( adsbygoogle = window.adsbygoogle || [])
+.push({});</script>
+
+
+    <p class="info">Rates updated April 2026 • Made with ❤️ in Eldoret, KE</p>
+  </div>
+<div style="margin-top:20px; text-align:center">
+<script async src ="https://pagead2.
+googlesyndition.com/pagead/Js/adsbygoogle.js
+? client = ca-pub-PLACEHOLDER"
+Crossorigin = "anonymous"></scrip>
+<Ins class = "adsbygoogle"
+Style = "display:block"
+data-ad-client = "ca-pub-PLACEHOLDER"
+data-ad-slot = "3333"
+data-ad-fotmat = "auto"
+data-full-with-responsive = "true" ></ins>
+<Script>( adsbygoogle = window.adsbygoogle || [])
+.push({});</script>
+
+
+  <div class="footer">
+    Not affiliated with Safaricom PLC • For education purposes
+  </div>
+</div>
+
+<script>
+let currentTab = 'forward';
+
+function switchTab(tab){
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  document.getElementById('forwardTab').style.display = tab=='forward'?'block':'none';
+  document.getElementById('reverseTab').style.display = tab=='reverse'?'block':'none';
+  document.getElementById('result').style.display = 'none';
+}
+
+function getFee(service, amt){
+  if(service == 'send'){
+    if(amt <= 100) return 0;
+    else if(amt <= 500) return 11;
+    else if(amt <= 1000) return 27;
+    else if(amt <= 1500) return 32;
+    else if(amt <= 2500) return 41;
+    else if(amt <= 3500) return 52;
+    else if(amt <= 5000) return 57;
+    else if(amt <= 7500) return 76;
+    else if(amt <= 10000) return 86;
+    else if(amt <= 20000) return 108;
+    else return 112;
+  }
+  else if(service == 'withdraw'){
+    if(amt <= 100) return 10;
+    else if(amt <= 200) return 20;
+    else if(amt <= 300) return 30;
+    else if(amt <= 500) return 40;
+    else if(amt <= 1000) return 50;
+    else if(amt <= 1500) return 60;
+    else if(amt <= 2500) return 70;
+    else if(amt <= 5000) return 90;
+    else return 110;
+  }
+  else if(service == 'paybill'){
+    if(amt <= 100) return 0;
+    else if(amt <= 500) return 11;
+    else if(amt <= 1000) return 22;
+    else if(amt <= 2500) return 32;
+    else if(amt <= 5000) return 37;
+    else if(amt <= 10000) return 40;
+    else if(amt <= 20000) return 46;
+    else return 52;
+  }
+  else return 0;
+}
+
+function hesabuForward(){
+  let s = document.getElementById('service1').value;
+  let amt = Number(document.getElementById('amount1').value);
+  if(amt < 1){ alert('Weka pesa kwanza!'); return; }
+  
+  let fee = getFee(s, amt);
+  let total = amt + fee;
+  
+  let serviceName = document.getElementById('service1').options[document.getElementById('service1').selectedIndex].text;
+  let feeClass = fee==0 ? 'free' : 'fee';
+  let feeText = fee==0 ? 'Ksh 0 BURE!' : `Ksh ${fee}`;
+  
+  let html = `<h3 style="color:#00a651; margin-top:0">${serviceName}</h3>
+  <p><b>Amount:</b> Ksh ${amt.toLocaleString()}</p>
+  <div class="${feeClass}"><b>Fee:</b> ${feeText}</div>
+  <div class="highlight">Total: Ksh ${total.toLocaleString()}</div>`;
+  
+  document.getElementById('result').innerHTML = html;
+  document.getElementById('result').style.display = 'block';
+}
+
+function hesabuReverse(){
+  let s = document.getElementById('service2').value;
+  let target = Number(document.getElementById('amount2').value);
+  if(target < 1){ alert('Weka pesa unayotaka apokee!'); return; }
+  
+  let sendAmt = target;
+  let fee = getFee(s, sendAmt);
+  while(sendAmt + fee < target){
+    sendAmt++;
+    fee = getFee(s, sendAmt);
+  }
+  
+  let html = `<h3 style="color:#00a651; margin-top:0">🔄 Reverse Calculator</h3>
+  <p><b>Target:</b> Ksh ${target.toLocaleString()}</p>
+  <div class="highlight">Weka: Ksh ${sendAmt.toLocaleString()}</div>
+  <div class="fee"><b>Fee:</b> Ksh ${fee}</div>
+  <p><b>Apokee:</b> Ksh ${target.toLocaleString()} kamili ✅</p>`;
+  
+  document.getElementById('result').innerHTML = html;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
+```html
+<div style="background:#00a651; color:white; padding:20px; border-radius:15px; margin-top:20px;">
+  <h3 style="margin:0 0 15px 0; text-align:center">💰 M-Pesa Earnings Tracker</h3>
+  
+  <!-- Ingiza Mauzo -->
+  <input id="saleAmount" type="number" placeholder="Weka pesa uliyotuma: 1000" 
+    style="width:100%; padding:12px; border:none; border-radius:8px; margin-bottom:10px; font-size:16px">
+  
+  <select id="serviceType" style="width:100%; padding:12px; border:none; border-radius:8px; margin-bottom:10px">
+    <option value="send">Send Money</option>
+    <option value="withdraw">Withdraw</option>
+    <option value="airtime">Buy Airtime</option>
+    <option value="paybill">Lipa Bill</option>
+  </select>
+  
+  <button onclick="addEarning()" style="width:100%; padding:15px; background:#ffcc00; color:#00a651; 
+    border:none; border-radius:8px; font-weight:bold; font-size:16px; cursor:pointer">
+    ➕ Weka Rekodi
+  </button>
+  
+  <!-- Dashboard ya Pesa -->
+  <div style="margin-top:20px; background:white; color:#00a651; padding:15px; border-radius:12px">
+    <h4 style="margin:0 0 10px 0; text-align:center">📊 Earnings Zako</h4>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:center">
+      <div>
+        <div style="font-size:12px">Leo</div>
+        <div style="font-size:22px; font-weight:bold" id="todayTotal">Ksh 0</div>
+      </div>
+      <div>
+        <div style="font-size:12px">Wiki Hii</div>
+        <div style="font-size:22px; font-weight:bold" id="weekTotal">Ksh 0</div>
+      </div>
+      <div>
+        <div style="font-size:12px">Mwezi</div>
+        <div style="font-size:22px; font-weight:bold" id="monthTotal">Ksh 0</div>
+      </div>
+      <div>
+        <div style="font-size:12px">Jumla Yote</div>
+        <div style="font-size:22px; font-weight:bold" id="allTotal">Ksh 0</div>
+      </div>
+    </div>
+    
+    <button onclick="clearData()" style="width:100%; margin-top:15px; padding:10px; background:#ff4444; 
+      color:white; border:none; border-radius:8px; font-size:14px; cursor:pointer">
+      🗑️ Futa Data Zote
+    </button>
+  </div>
+  
+  <!-- List ya Rekodi za Hivi Karibuni -->
+  <div id="recentList" style="margin-top:15px; max-height:200px; overflow-y:auto"></div>
+</div>
+
+<script>
+// Hifadhi data kwa simu ya user - localStorage
+let earnings = JSON.parse(localStorage.getItem('mpesaEarnings')) || [];
+
+function addEarning(){
+  let amount = Number(document.getElementById('saleAmount').value);
+  let service = document.getElementById('serviceType').value;
+  
+  if(amount < 1){ alert('Weka pesa kwanza!'); return; }
+  
+  // Hifadhi rekodi mpya
+  earnings.push({
+    amount: amount,
+    service: service,
+    date: new Date().toISOString(),
+    time: new Date().toLocaleTimeString('en-KE')
+  });
+  
+  localStorage.setItem('mpesaEarnings', JSON.stringify(earnings));
+  document.getElementById('saleAmount').value = '';
+  
+  updateDashboard();
+  alert('✅ Rekodi imehifadhiwa! Ksh ' + amount.toLocaleString());
+}
+
+function updateDashboard(){
+  let today = new Date().toDateString();
+  let weekStart = new Date();
+  weekStart.setDate(weekStart.getDate() - 7);
+  let monthStart = new Date();
+  monthStart.setDate(1);
+  
+  let todayTotal = earnings.filter(e => new Date(e.date).toDateString() == today)
+    .reduce((sum, e) => sum + e.amount, 0);
+  
+  let weekTotal = earnings.filter(e => new Date(e.date) >= weekStart)
+    .reduce((sum, e) => sum + e.amount, 0);
+  
+  let monthTotal = earnings.filter(e => new Date(e.date) >= monthStart)
+    .reduce((sum, e) => sum + e.amount, 0);
+  
+  let allTotal = earnings.reduce((sum, e) => sum + e.amount, 0);
+  
+  document.getElementById('todayTotal').innerText = 'Ksh ' + todayTotal.toLocaleString();
+  document.getElementById('weekTotal').innerText = 'Ksh ' + weekTotal.toLocaleString();
+  document.getElementById('monthTotal').innerText = 'Ksh ' + monthTotal.toLocaleString();
+  document.getElementById('allTotal').innerText = 'Ksh ' + allTotal.toLocaleString();
+  
+  // Onyesha rekodi 5 za mwisho
+  let recent = earnings.slice(-5).reverse();
+  let listHTML = '<h4 style="color:white; margin-bottom:8px">📝 Rekodi za Hivi Karibuni:</h4>';
+  recent.forEach(r => {
+    let date = new Date(r.date).toLocaleDateString('en-KE');
+    listHTML += `<div style="background:rgba(255,255,255,0.2); padding:8px; margin:5px 0; border-radius:6px; font-size:14px">
+      ${r.service.toUpperCase()}: Ksh ${r.amount.toLocaleString()} - ${date} ${r.time}
+    </div>`;
+  });
+  document.getElementById('recentList').innerHTML = listHTML;
+}
+
+function clearData(){
+  if(confirm('Una uhakika unataka kufuta data zote?')){
+    localStorage.removeItem('mpesaEarnings');
+    earnings = [];
+    updateDashboard();
+    alert('Data zote zimefutwa!');
+  }
+}
+
+// Load dashboard wakati page inafunguka
+updateDashboard();
+</scrit>
+''' html
